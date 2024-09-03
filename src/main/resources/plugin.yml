@@ -1,0 +1,21 @@
+name: Whitelist
+version: '${project.version}'
+main: necko1.whitelist.Whitelist
+api-version: '1.20'
+load: STARTUP
+commands:
+  whitelist:
+    description: Whitelist command
+    permission: whitelist.use
+#    usage: /<command> <on|off|list|add|remove|migrate> [nickname] [time s/m/h/d]
+permissions:
+  whitelist.use:
+    description: Allows the use of the whitelist command
+    default: op
+  whitelist.bypass:
+    description: Allows to bypass the whitelist
+    default: op
+  whitelist.*:
+    children:
+      - whitelist.use
+      - whitelist.bypass

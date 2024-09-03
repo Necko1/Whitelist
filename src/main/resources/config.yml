@@ -1,0 +1,32 @@
+turned: true
+
+kick-message: You are not whitelisted on this server!
+reload-success: Reloaded the whitelist
+reload-failed: <red>Failed to reload the whitelist</red>
+migrate-success: Migrated the whitelist
+migrate-failed: <red>Failed to migrate the whitelist</red>
+list-empty: There are no whitelisted players
+list-message: 'There are <size> whitelisted player(s): <list>'
+list-failed: <red>Failed to list the whitelist</red>
+add-usage: 'Usage: /whitelist add <name> [time s/m/h/d]'
+player-already-whitelisted: <red>Player is already whitelisted</red>
+add-success: Added <name> to the whitelist for <time>
+add-failed: <red>Failed to add the player to the whitelist</red>
+remove-usage: 'Usage: /whitelist remove <name>'
+player-not-whitelisted: <red>Player is not whitelisted</red>
+remove-success: Removed <name> from the whitelist
+remove-failed: <red>Failed to remove the player from the whitelist</red>
+wl_on_failed: <red>Whitelist is already turned on</red>
+wl_on_success: Whitelist is now turned on
+wl_off_failed: <red>Whitelist is already turned off</red>
+wl_off_success: Whitelist is now turned off
+
+
+help:
+  - /whitelist add <name> [time s/m/h/d] - Add a player to the whitelist for a certain amount of time (optional)
+  - /whitelist remove <name> - Remove a player from the whitelist
+  - /whitelist list - List all whitelisted players
+  - /whitelist reload - Reload the config
+  - /whitelist help - Show this help
+  - /whitelist on - Turn the whitelist on
+  - /whitelist off - Turn the whitelist off
