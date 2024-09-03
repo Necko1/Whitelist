@@ -29,18 +29,6 @@ public class JoinListener implements Listener {
             } else return;
         }
         event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_WHITELIST, Whitelist.serializer.serialize(Whitelist.wlConfig.getString("kick-message")));
-//        this.kickPlayer(player, );
-    }
-
-    public void kickPlayer(Player player, String reason) {
-        player.kickPlayer(reason);
-        ByteArrayDataOutput out = ByteStreams.newDataOutput();
-
-        out.writeUTF("CustomMessage");
-        out.writeUTF(player.getName());
-        out.writeUTF(reason);
-
-        player.sendPluginMessage(Whitelist.getInstance(), "bungeecord:channel", out.toByteArray());
     }
 
 }
