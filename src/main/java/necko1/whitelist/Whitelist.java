@@ -41,7 +41,7 @@ public final class Whitelist extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        this.api = new WhitelistAPI_impl();
+        api = new WhitelistAPI_impl();
 
         json = new WLJsonData();
         json.init();

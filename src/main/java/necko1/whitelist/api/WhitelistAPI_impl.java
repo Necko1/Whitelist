@@ -74,24 +74,24 @@ public class WhitelistAPI_impl implements WhitelistAPI {
     public boolean add(String nickname, long expire_after) {
         UUID uuid = Utils.getUUID(nickname);
 
-        return this.add(uuid, expire_after);
+        return add(uuid, expire_after);
     }
 
     @Override
     public boolean add(UUID uuid) {
-        return this.add(uuid, -1);
+        return add(uuid, -1);
     }
 
     @Override
     public boolean add(String nickname) {
-        return this.add(nickname, -1);
+        return add(nickname, -1);
     }
 
     @Override
     public boolean remove(String nickname) {
         UUID uuid = Utils.getUUID(nickname);
 
-        return this.remove(uuid);
+        return remove(uuid);
     }
 
     @Override
