@@ -20,7 +20,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Necko1 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Necko1/REPOSITORY</url>
+            <url>https://maven.pkg.github.com/Necko1/Whitelist</url>
         </repository>
     </distributionManagement>
 
