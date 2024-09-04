@@ -41,7 +41,7 @@ A whitelist plugin for Bukkit servers that uses local UUIDs, without any Microso
     </dependency>
 </dependencies>
 ```
-* `<version>v-SNAPSHOT</version>` <-- Replace with the [latest package release](https://github.com/Necko1/Whitelist/packages)
+* `<version>v-SNAPSHOT</version>` <-- Replace with the [latest package release](https://github.com/Necko1/Whitelist/packages/2244918)
 3. #### Add instance of the `WhitelistAPI` to your onEnable:
 ```java
 import org.necko1.whitelist.Whitelist;
