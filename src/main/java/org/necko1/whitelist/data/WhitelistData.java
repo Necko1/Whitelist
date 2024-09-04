@@ -1,4 +1,4 @@
-package necko1.whitelist.data;
+package org.necko1.whitelist.data;
 
 import java.util.UUID;
 

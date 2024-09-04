@@ -1,6 +1,6 @@
 name: Whitelist
 version: '${project.version}'
-main: necko1.whitelist.Whitelist
+main: org.necko1.whitelist.Whitelist
 api-version: '1.20'
 load: STARTUP
 commands:

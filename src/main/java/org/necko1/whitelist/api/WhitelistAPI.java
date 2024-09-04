@@ -1,6 +1,6 @@
-package necko1.whitelist.api;
+package org.necko1.whitelist.api;
 
-import necko1.whitelist.data.WhitelistData;
+import org.necko1.whitelist.data.WhitelistData;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -37,12 +37,12 @@ public interface WhitelistAPI {
 
     /**
      * Adds player to whitelist.
-     * @param uuid Player's UUID. (Must be gotten by {@link necko1.whitelist.api.WhitelistAPI#getUUID(String)})
+     * @param uuid Player's UUID. (Must be gotten by {@link org.necko1.whitelist.api.WhitelistAPI#getUUID(String)})
      * @param expire_after How long player will be whitelisted in seconds.
      *                     If -1, player will be whitelisted forever.
      * @return true if adding was successful, false otherwise.
      */
-    boolean add(UUID uuid, long expire_after);
+    boolean add(UUID uuid, String nickname, long expire_after);
 
     /**
      * Adds player to whitelist.
@@ -55,10 +55,10 @@ public interface WhitelistAPI {
 
     /**
      * Adds player to whitelist.
-     * @param uuid Player's UUID. (Must be gotten by {@link necko1.whitelist.api.WhitelistAPI#getUUID(String)})
+     * @param uuid Player's UUID. (Must be gotten by {@link org.necko1.whitelist.api.WhitelistAPI#getUUID(String)})
      * @return true if adding was successful, false otherwise.
      */
-    boolean add(UUID uuid);
+    boolean add(UUID uuid, String nickname);
 
     /**
      * Adds player to whitelist.
@@ -76,10 +76,10 @@ public interface WhitelistAPI {
 
     /**
      * Removes player from whitelist.
-     * @param uuid Player's UUID. (Must be gotten by {@link necko1.whitelist.api.WhitelistAPI#getUUID(String)})
+     * @param uuid Player's UUID. (Must be gotten by {@link org.necko1.whitelist.api.WhitelistAPI#getUUID(String)})
      * @return true if removing was successful, false otherwise.
      */
-    boolean remove(UUID uuid);
+    boolean remove(UUID uuid, String nickname);
     /**
      * Enables whitelist.
      * @return true if enabling was successful, false otherwise.
@@ -121,5 +121,8 @@ public interface WhitelistAPI {
      * @return data of player, or null if no such player exists in whitelist.
      */
     WhitelistData getData(UUID uuid);
+
+
+    long parseTime(String time, boolean add_current);
 
 }

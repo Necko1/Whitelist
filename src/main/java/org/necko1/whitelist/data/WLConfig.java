@@ -1,6 +1,6 @@
-package necko1.whitelist.data;
+package org.necko1.whitelist.data;
 
-import necko1.whitelist.Whitelist;
+import org.necko1.whitelist.Whitelist;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -19,7 +19,6 @@ public class WLConfig {
 
     public File file;
     public FileConfiguration config;
-    public FileConfiguration defaultConfig;
 
     public void init() {
         this.file = new File(Whitelist.getInstance().getDataFolder(), "config.yml");

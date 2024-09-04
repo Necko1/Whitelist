@@ -1,16 +1,14 @@
-package necko1.whitelist;
+package org.necko1.whitelist;
 
-import necko1.whitelist.api.WhitelistAPI;
-import necko1.whitelist.api.WhitelistAPI_impl;
-import necko1.whitelist.cmd.WhiteListTabCompleter;
-import necko1.whitelist.cmd.WhitelistCommand;
-import necko1.whitelist.data.WLConfig;
-import necko1.whitelist.data.WLJsonData;
+import org.necko1.whitelist.api.WhitelistAPI;
+import org.necko1.whitelist.api.WhitelistAPI_impl;
+import org.necko1.whitelist.cmd.WhiteListTabCompleter;
+import org.necko1.whitelist.cmd.WhitelistCommand;
+import org.necko1.whitelist.data.WLConfig;
+import org.necko1.whitelist.data.WLJsonData;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.serializer.json.JSONComponentSerializer;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -23,7 +21,7 @@ public final class Whitelist extends JavaPlugin {
 
     public static WLJsonData json;
     public static WLConfig wlConfig;
-    public static final MiniMessage miniMessage = MiniMessage.miniMessage();;
+    public static final MiniMessage miniMessage = MiniMessage.miniMessage();
     public static final LegacyComponentSerializer serializer = LegacyComponentSerializer.legacySection();
 
     private static Whitelist instance;
@@ -41,10 +39,11 @@ public final class Whitelist extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        api = new WhitelistAPI_impl();
-
         json = new WLJsonData();
         json.init();
+
+        api = new WhitelistAPI_impl(json);
+
         wlConfig = new WLConfig();
         wlConfig.init();
 

@@ -1,8 +1,8 @@
-package necko1.whitelist.cmd;
+package org.necko1.whitelist.cmd;
 
-import necko1.whitelist.Utils;
-import necko1.whitelist.Whitelist;
-import necko1.whitelist.data.WhitelistData;
+import org.necko1.whitelist.Utils;
+import org.necko1.whitelist.Whitelist;
+import org.necko1.whitelist.data.WhitelistData;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -126,7 +126,7 @@ public class WhitelistCommand implements CommandExecutor {
             long time = -1;
             String arg2 = "forever";
             if (args.length == 3) {
-                time = Utils.parseTime(args[2]);
+                time = Utils.parseTime(args[2], true);
                 arg2 = args[2];
             }
             Whitelist.json.addData(uuid, nickname, time);

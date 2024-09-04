@@ -1,7 +1,7 @@
-package necko1.whitelist.data;
+package org.necko1.whitelist.data;
 
-import necko1.whitelist.Utils;
-import necko1.whitelist.Whitelist;
+import org.necko1.whitelist.Utils;
+import org.necko1.whitelist.Whitelist;
 import org.bukkit.Bukkit;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;

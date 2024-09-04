@@ -1,4 +1,4 @@
-package necko1.whitelist;
+package org.necko1.whitelist;
 
 import java.util.UUID;
 
@@ -11,7 +11,7 @@ public class Utils {
         return UUID.nameUUIDFromBytes(nickname.getBytes());
     }
 
-    public static long parseTime(String s) {
+    public static long parseTime(String s, boolean add_current) {
         Pattern p = Pattern.compile("(\\d+)([smhd])");
         Matcher m = p.matcher(s);
         long num = 0;
@@ -27,7 +27,9 @@ public class Utils {
                 i = i * 60 * 60 * 24;
             num += i;
         }
-        return num * 1000 + System.currentTimeMillis();
+        long res = num * 1000;
+        if (add_current) res += System.currentTimeMillis();
+        return res;
     }
 
 }

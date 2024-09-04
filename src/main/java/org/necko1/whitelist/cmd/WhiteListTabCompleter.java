@@ -1,6 +1,6 @@
-package necko1.whitelist.cmd;
+package org.necko1.whitelist.cmd;
 
-import necko1.whitelist.Whitelist;
+import org.necko1.whitelist.Whitelist;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

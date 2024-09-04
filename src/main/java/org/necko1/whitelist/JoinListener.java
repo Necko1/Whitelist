@@ -1,9 +1,6 @@
-package necko1.whitelist;
+package org.necko1.whitelist;
 
-import com.google.common.io.ByteArrayDataOutput;
-import com.google.common.io.ByteStreams;
-import necko1.whitelist.data.WhitelistData;
-import org.bukkit.entity.Player;
+import org.necko1.whitelist.data.WhitelistData;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
@@ -18,6 +15,7 @@ public class JoinListener implements Listener {
 
         UUID uuid = Utils.getUUID(event.getName());
         WhitelistData playerData = Whitelist.json.getByUUID(uuid);
+
         if (playerData != null && playerData.getGood_by() < 0) return;
         if (playerData != null && Whitelist.json.getUUIDs().contains(uuid)) {
             long time_left = playerData.getGood_by();
