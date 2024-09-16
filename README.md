@@ -53,8 +53,15 @@ private WhitelistAPI whitelistAPI;
 @Override
 public void onEnable() {
     Whitelist whitelist = (Whitelist) getServer().getPluginManager().getPlugin("Whitelist");
-    if (whitelist == null || !whitelist.isEnabled()) {
-        getLogger().info("Whitelist plugin not found or not enabled");
+    try {
+        Whitelist whitelist = (Whitelist) getServer().getPluginManager().getPlugin("Whitelist");
+        if (whitelist == null || !whitelist.isEnabled()) {
+            getLogger().info("Whitelist plugin not found or not enabled");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+    } catch (NoClassDefFoundError e) {
+        getLogger().info("(NoClassDefFoundError): Whitelist plugin wasn't loaded or you are using paper-plugin.yml");
         getServer().getPluginManager().disablePlugin(this);
         return;
     }
