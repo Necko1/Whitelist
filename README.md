@@ -52,8 +52,9 @@ private WhitelistAPI whitelistAPI;
 
 @Override
 public void onEnable() {
+    Whitelist whitelist;
     try {
-        Whitelist whitelist = (Whitelist) getServer().getPluginManager().getPlugin("Whitelist");
+        whitelist = (Whitelist) getServer().getPluginManager().getPlugin("Whitelist");
         if (whitelist == null || !whitelist.isEnabled()) {
             getLogger().info("Whitelist plugin not found or not enabled");
             getServer().getPluginManager().disablePlugin(this);
